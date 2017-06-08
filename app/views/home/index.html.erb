@@ -1,0 +1,118 @@
+<div id="bar">
+	<div id="setting">
+		<div>
+			<h3>AIM</h3>
+		</div>
+		<div id="obj">
+			<h4>Objects</h4>
+			<div id="list"></div>
+			<div class="setting" id="attr">
+				<input type="text" id="current"></input>
+				<div id="stroke">
+					<h5>Stroke</h5>
+					<div>
+						<label for='weight'>Weight</label>
+						<input type="text" id="weight"></input>
+					</div>
+					<div>
+						<label for='weight'>Color</label>
+						<input type="text" id="color"></input>
+					</div>
+				</div>
+				<div id="fill">
+					<h5>Fill</h5>
+					<div>
+						<label for="">Color</label>
+						<input type="text"></input>
+					</div>
+				</div>
+				<div id="cap">
+					<h5>Corner</h5>
+					<div>
+						<label for="linecap">Linecap</label>
+						<select id="linecap">
+							<option value="butt">Butt</option>
+							<option value="square">Square</option>
+							<option value="round">Round</option>
+						</select>
+					</div>
+					<div>
+						<label for="linejoin">Linejoin</label>
+						<input type="text" id="linejoin">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="setting" id="win">
+			<h4>Window</h4>
+			<div id="grid">
+				<h5>Canvas</h5>
+				<div>
+					<label>Grid</label>
+					<input type="checkbox" checked="yes"></input>
+				</div>
+				<div>
+					<label>Size</label>
+					<input type="text" value="10"></input>
+				</div>
+			</div>
+		</div>
+		<div class="setting" id="file">
+			<h4>File</h4>
+			<div>
+				<div>
+					<label>Open</label>
+					<input type="file"></input>
+				</div>
+				<div>
+					<label>Save</label>
+					<input type="text"></input>
+				</div>
+				<%= button_to "Write", { :controller => 'home' }, 
+					:method => :put %>
+		</div>
+		</div>
+		<div id="help">
+			<h3>
+				<a target="_blank" href="http://cmd.jackhasakeyboard.co/aim">?</a>
+			</h3>
+		</div>
+	</div>
+	<div id="btn">
+		<a>Primitives</a>
+	</div>
+	<div id="prim">
+		<a>
+			<svg height="50" width="50">
+				<path d="M0 0 L50 0 L50 50 L0 50 Z"></path>
+			</svg>
+		</a>
+		<a>
+			<svg height="50" width="50">
+				<path d="M25 0 L0 37.5 L50 37.5 Z"></path>
+			</svg>
+		</a>
+		<a>
+			<svg height="50" width="50">
+				<path d="M 25, 25 m -18.25, 0 a 18.25,18.25 0 1,0 37.5,0 a 18.25,18.25 0 1,0 -37.5,0"></path>
+			</svg>
+		</a>
+		<a>
+			<svg fill="none" height="50" stroke="#000" width="50">
+				<path d="M0, 0 L50, 0"></path>
+			</svg>
+		</a>
+	</div>
+</div>
+<div id="doc">
+	<div id="cont">
+		<div id="canv">
+			<svg id="curs">
+				<path d="M0 10 L20 10 M10 0 L10 20 Z" stroke="#000"></path>
+				<text font-size="10px" x="14" y="6"></text>
+			</svg>
+		</div>
+	</div>
+	<pre id="data">
+	</pre>
+</div>

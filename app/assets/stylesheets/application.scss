@@ -16,10 +16,157 @@
 @import "vars";
 @import "mixins";
 
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+* {
+	font-family: 'Verdana', sans-serif;
+}
+
 a {
 	text-decoration: none;
+	cursor: pointer;
+	color: #fff;
 }
 
 li {
 	list-style: none;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+#bar {
+	display: flex;
+	background: #333;
+	color: #fff;
+	#setting {
+		h4 {
+			cursor: pointer;
+		}
+	}
+ * {
+	 padding: 4px;
+ }
+	> div {
+		display: flex;
+		flex-direction: column;
+	input {
+			background: #444;
+			border: 1px solid grey;
+			font-size: 12px;
+		}
+		.setting {
+			> div {
+				div {
+					display: flex;
+					input[type='text'], input[type='file'], select {
+						margin-left: auto;
+						width: 60px;
+					}
+				}
+			}
+		}
+	}
+	#btn {
+		background: #222;
+		padding-right: 18px;
+		a.current {
+			text-decoration: underline;
+			&::after {
+				content: '';
+				border-top: 9px solid transparent;
+				border-bottom: 9px solid transparent;
+				border-right: 9px solid #333;
+				float: right;
+				margin-right: -24px;
+			}
+		}
+	}
+	#prim {
+		display: flex;
+		flex-direction: column;
+		a {
+			svg {
+				background: #fff;
+			}
+		}
+	}
+	#help {
+		margin-top: auto;
+	}
+}
+
+#doc {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	overflow-x: scroll;
+	#cont {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: grey;
+	flex-grow: 1;
+	#canv {
+		background: #fff;
+		height: 400px;
+		width: 400px;
+		&.grid {
+			background-size: 10px 10px;
+			background-image: linear-gradient(to right, #e5e5e5 1px, transparent 1px), linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+			// &::before {
+			// 	content: '400px';
+			// 	position: absolute;
+			// 	margin-left: 400px;
+			// 	font-size: 10px;
+			// }
+			// &::after {
+			// 	content: '400px';
+			// 	position: absolute;
+			// 	margin-top: 400px;
+			// 	font-size: 10px;
+			// }
+		}
+		* {
+			display: inline-block;
+			position: absolute;
+		}
+		svg {
+			overflow: visible;
+		}
+	}
+}
+}
+
+#data {
+	height: 60px;
+	padding: 6px;
+	margin: 0;
+	font-family: 'Ubuntu Mono', monospace;
+	overflow-y: scroll;
+}
+
+// canvas
+.active path {
+	stroke: blue;
+	stroke-dasharray: 5, 5;
+}
+
+#curs {
+	overflow: visible;
+}
+
+// input
+label, input {
+	padding: 4px;
 }

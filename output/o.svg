@@ -1,0 +1,6 @@
+<div id="canv">
+    <svg id="curs">
+      <path d="M0 10 L20 10 M10 0 L10 20 Z" stroke="#000"></path>
+      <text font-size="10px" x="14" y="6"></text>
+    </svg>
+  </div>
