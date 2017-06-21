@@ -1,0 +1,92 @@
+#bar {
+	display: flex;
+	color: #fff;
+	z-index: 1000;
+	* {
+		padding: 4px;
+	}
+	> div {
+		display: flex-column;
+		overflow-y: scroll;
+	}
+	#setting {
+		background: #333;
+		h4 {
+			cursor: pointer;
+		}
+		.setting {
+			> div {
+				border: 1px solid grey;
+				.input {
+					display: flex;
+					input,
+					select {
+						margin-left: auto;
+						width: 60px;
+					}
+				}
+			}
+		}
+	}
+	#btn {
+		background: #222;
+		padding-right: 18px;
+		width: 100px;
+		margin: 0;
+		a.current {
+			text-decoration: underline;
+			&::after {
+				content: '';
+				border-top: 9px solid transparent;
+				border-bottom: 9px solid transparent;
+				border-right: 9px solid #333;
+				float: right;
+				margin-right: -24px;
+			}
+		}
+	}
+	#res {
+		background: #333;
+		overflow-y: scroll;
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #fff;
+			margin: 10px;
+			padding: 0;
+			// fix svg expanding to huge size
+			div {
+				padding: 0;
+				svg {
+					padding: 0;
+					height: 50px;
+					width: 50px;
+				}
+			}
+		}
+	}
+	#color-palette {
+		div {
+			display: flex;
+			svg {
+				cursor: pointer;
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+	#history {
+		div {
+			background: #fff;
+			margin: 10px;
+			svg {
+				transform: scale(0.4);
+				overflow: visible;
+			}
+		}
+	}
+	#help {
+		margin-top: auto;
+	}
+}

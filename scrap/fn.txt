@@ -1,0 +1,13 @@
+var d = getData();
+
+var s = '';
+
+$.each(d, function(i, point) {
+		s == '' ? char = 'M' : char = 'L'
+
+		s += char + ' ' + (point['point'][1] * ratio) + ',' + (point['point'][2] * ratio) + '\n'
+		});
+
+s += 'Z\n'	
+
+$('.active path').attr('d', s);

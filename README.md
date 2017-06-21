@@ -1,28 +1,16 @@
-== README
+AIM is an experiment in making an SVG editor that runs in the web browser
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The premise draws a lot of parallels to Vim in that it's desgined to be a lightweight paradigm that's tough to get into but pays off in the long term. With heavy use of hotkeys.
 
-Things you may want to cover:
+For example, key motions: 
 
-* Ruby version
+g
+	x
+	y
+		<no>
 
-* System dependencies
+The 'j' hotkey will position the cursor, the following x or y key specifices the axis and the following numeric value specifices the co-ordinate.
 
-* Configuration
+Whether or not this will end up being written in JavaScript in the long term is debatable. There are some advantages that make sense logically (like SVG being XML based), but of course there are disadvantages. Like JavaScript's fickle and roundabout ways of writing to the file system.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+It's unlikely this project will go anywhere special, so don't expect quality code organized in a logical fashion or any kind of sensical workflow. If you happen to be taking a look at this repo and you're interested in graphic design, then please give me all your thoughts :)

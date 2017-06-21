@@ -1,0 +1,21 @@
+input {
+	background: #444;
+	border: 1px solid grey;
+	font-size: 12px;
+}
+
+input[type='file'] {
+	width: 20px;
+}
+
+input[type='checkbox'] {
+	border: 1px solid grey;
+	background: #333;
+	border-radius: 0;
+	margin-top: 7px;
+}
+
+input[type='submit'] {
+	cursor: pointer;
+	color: #fff;
+}
