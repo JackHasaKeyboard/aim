@@ -117,15 +117,21 @@
 		<%# </div> %>
 			<div class="setting" id="color-palette">
 				<h4>Colors</h4>
-				<div>
-					<% color = JSON.parse(File.read("cfg/color.json")).map %>
-					<% color.each do |i, el| %>
- <svg>
-							 <rect width="16px" height="16px" fill="<%= el %>"></rect>
-						</svg>
+					<% f = JSON.parse(File.read("cfg/color.json")).map %>
+
+					<% f.each do |name, palette| %>
+						<div>
+							<h5><%= name %></h5>
+							<div>
+								<% palette.each do |i, color| %>
+								 <svg>
+										 <rect width="16px" height="16px" fill="<%= color %>"></rect>
+									</svg>
+								<% end %>
+							</div>
+						</div>
 					<% end %>
 				</div>
-			</div>
 	</div>
 	<ul id="btn">
 		<li>

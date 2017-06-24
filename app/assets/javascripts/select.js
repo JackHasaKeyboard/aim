@@ -34,30 +34,29 @@ $(document).on('mousedown mouseup', function(e) {
 			$('#overlay').append('<svg id="select"><rect x="' + select[0][0] + '" y="' + select[0][1] + '" style="stroke-width: 1; stroke: red" fill="rgba(255, 0, 0, 0.6)"></svg>');
 		}
 
-		$(document).on('mousemove', function(e) {
+		$(document).on('mousemove', function() {
 			pos = [
 				Math.round(event.pageX - offset.left),
 				Math.round(event.pageY - offset.top)
 			]
 
-			Math.round(pos[0]) < 400 ? select[1][0] = pos[0] : select[1][0] = 400
-			Math.round(pos[1]) < 400 ? select[1][1] = pos[1] : select[1][1] = 400
+			pos[0] < 400 ? select[1][0] = pos[0] : select[1][0] = 400
+			pos[1] < 400 ? select[1][1] = pos[1] : select[1][1] = 400
 
 			var size = [
 				select[1][0] - select[0][0],
 				select[1][1] - select[0][1]
 			]
 
-			size[0] > 0 ? $('#select rect').attr('width', size[0]) : size[0] = 0
-			size[1] > 0 ? $('#select rect').attr('height', size[1]) : size[1] = 0
+			select[1][0] > select[0][0] ? caw = 'asdf' : ($('#select').attr('x', pos[1][0]), size[0] = select[0][0] - select[1][0])
+			select[1][1] > select[0][1] ? caw = 'asdf' : ($('#select').attr('y', pos[1][1]), size[1] = select[0][1] - select[1][1])
+
+			$('#select rect').attr('width', size[0]);
+			$('#select rect').attr('height', size[1]);
 		});
 	}
 
-	if (e.type == 'mouseup') {
-		$('#select').remove();
-	}
-
-	$('#overlay .obj').each(function() {
+	$('#canv .obj').each(function() {
 		$(this).addClass('active');
 	});
 });
