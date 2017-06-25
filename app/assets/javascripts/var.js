@@ -1,11 +1,11 @@
-size = [400, 400];
+var size = [400, 400];
 
-d = '';
+var d = '';
 
-mode = 'obj';
-p = 0;
+var mode = 'obj';
+var p = 0;
 
-inc = 10;
-dir = 1;
-keymode = '';
-clipboard = [];
+var inc = 10;
+var dir = 1;
+var keymode = '';
+var clipboard = [];
