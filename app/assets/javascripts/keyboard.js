@@ -9,7 +9,7 @@ $(document).on('keydown keyup', function(e) {
 			case 17: // ctrl
 				inc = 1;
 
-				keymode = 'chain'	;
+				keymode = 'chain';
 
 				break;
 
@@ -100,9 +100,9 @@ $(document).keydown(function(e) {
 		if (keymode == 'chain') {
 			switch(e.which) {
 				case 67: // c
-					clipboard = $('.active').html();
+					clipboard = $('.active').clone();
 
-					clipboard.css('margin-left: ' + pos[0] + '; margin-top: ' + pos[1]); // make html including container
+					clipboard.attr('id', $('.active').attr('id') + '-cpy');
 					clipboard.attr('class', 'obj active');
 
 					break;
@@ -111,7 +111,7 @@ $(document).keydown(function(e) {
 					obj++;
 
 					$('.active').attr('class', 'obj');
-					$('#canv').append('<svg id="obj--' + obj + '" class="obj active">' + clipboard + '</svg>');
+					$('#canv').append(clipboard);
 
 					var d = getData();
 
@@ -123,6 +123,7 @@ $(document).keydown(function(e) {
 
 					setData(d);
 
+					updateData();
 					updateObjList();
 
 					break;
@@ -214,7 +215,7 @@ $(document).keydown(function(e) {
 
 					break;
 
-				case 82: // j (find key, r right now)
+				case 74: // j
 					switch(e.which) {
 						// case x:
 							// pos[0] = arg
@@ -243,16 +244,14 @@ $(document).keydown(function(e) {
 
 				case 90: // z
 					$('.active').attr('class', 'obj');
-					$('.node').remove();
-					$('#new').remove();
+
+					updateNode();
 
 					mode = 'obj';
 
 					break;
 
 				case 79: // o
-					e.preventDefault();
-
 					if (dir == 1) {
 						obj < ($('.obj').length - 1) ? obj += dir : obj = 0
 					}
@@ -310,17 +309,7 @@ $(document).keydown(function(e) {
 					break;
 			}
 
-			var d = '';
-
-			$.each(data, function(i, point) {
-				d == '' ? char = 'M' : char = 'L'
-
-				d += char + ' ' + point[0] + ',' + point[1] + '\n';
-			});
-
-			d +='Z\n'
-
-			$('.active path').attr('d', d);
+			setData(d);
 		}
 	}
 });

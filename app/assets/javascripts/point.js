@@ -75,10 +75,8 @@ window.selectPoint = function(dir) {
 	updateNode();
 }
 
-window.setData = function(obj) {
+window.setData = function(d) {
 	var s = '\n'
-
-	var d = getData();
 
 	$.each(d, function(i, point) {
 		s += point['point'][0] + ' ' + point['point'][1] + ',' + point['point'][2] + '\n'
@@ -86,5 +84,5 @@ window.setData = function(obj) {
 
 	s += 'Z\n'
 
-	$(obj + ' path').attr('d', s);
+	$('.active path').attr('d', s);
 }
