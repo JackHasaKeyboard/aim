@@ -139,6 +139,11 @@
 				</div>
 			<% end %>
 		</div>
+		<div id="help">
+			<h3>
+				<a target="_blank" href="http://cmd.jackhasakeyboard.co/aim">?</a>
+			</h3>
+		</div>
 	</div>
 	<ul id="btn">
 		<li>
@@ -149,25 +154,14 @@
 		</li>
 	</ul>
 	<div id="res">
-		<% Dir.glob("prim/*").each do |f| %>
-			<div>
+		<% Dir.glob("svg/*").each do |d| %>
+			<% Dir.glob("#{d}/*").each do |f| %>
 				<div>
-					<%= File.read(f).html_safe %>
+					<div>
+						<%= File.read(f).html_safe %>
+					</div>
 				</div>
-			</div>
+			<% end %>
 		<% end %>
-
-		<% Dir.glob("output/*").each do |f| %>
-			<div>
-				<div>
-					<%= File.read(f).html_safe %>
-				</div>
-			</div>
-		<% end %>
-		<div id="help">
-			<h3>
-				<a target="_blank" href="http://cmd.jackhasakeyboard.co/aim">?</a>
-			</h3>
-		</div>
 	</div>
 </div>
