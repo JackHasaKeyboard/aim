@@ -4,6 +4,6 @@ window.updateHighlight = function() {
 	if (!$('.highlight').length) {
 		$('#overlay').append('<svg class="highlight" fill="none"><path d="' + d + '"></path></svg>');
 	} else {
-		setData('.highlight');
+		$('.highlight path').attr('d', $('.active path').attr('d'));
 	}
 }
