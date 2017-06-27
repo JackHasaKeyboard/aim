@@ -124,6 +124,11 @@
 					<h5><%= name %></h5>
 					<div>
 						<% palette.each do |i, data| %>
+							<% if data.class == String %>
+								<svg>
+									<rect width="16px" height="16px" fill="<%= data %>"></rect>
+								</svg>
+							<% end %>
 							<% if data.class == Hash %>
 								<div>
 									<h5><%= i %></h5>
@@ -146,12 +151,11 @@
 		</div>
 	</div>
 	<ul id="btn">
-		<li>
-			<a>Primitives</a>
-		</li>
-		<li>
-			<a>Saved</a>
-		</li>
+		<% Dir.glob("svg/*").each do |d| %>
+			<li>
+				<a><%= d.match(/[^\/]+$/) %></a>
+			</li>
+		<% end %>
 	</ul>
 	<div id="res">
 		<% Dir.glob("svg/*").each do |d| %>
