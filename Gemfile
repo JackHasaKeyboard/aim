@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 
 gem 'nokogiri', '~> 1.6.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

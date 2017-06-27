@@ -4,7 +4,7 @@
 			<h3 id="logo">AIM</h3>
 		</div>
 		<div id="obj" class="setting">
-			<h4>Objects</h4>
+			<h4>Objects<i class="fa fa-angle-double-down"></i></h4>
 			<div>
 				<div id="list"></div>
 				<div id="attr">
@@ -85,7 +85,7 @@
 			</div>
 		</div>
 		<div class="setting" id="win">
-			<h4>Window</h4>
+			<h4>Window<i class="fa fa-angle-double-down"></i></h4>
 			<div id="grid">
 				<h5>Canvas</h5>
 				<div class="input">
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 		<div class="setting" id="file">
-			<h4>File</h4>
+			<h4>File<i class="fa fa-angle-double-down"></i></h4>
 			<div>
 				<div class="input">
 					<label>Open</label>
@@ -116,7 +116,7 @@
 				<%# 	</div> %>
 			<%# </div> %>
 		<div class="setting" id="color-palette">
-			<h4>Colors</h4>
+			<h4>Colors<i class="fa fa-angle-double-down"></i></h4>
 			<% f = JSON.parse(File.read("cfg/color.json")).map %>
 
 			<% f.each do |name, palette| %>
