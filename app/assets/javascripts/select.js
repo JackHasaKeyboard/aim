@@ -1,9 +1,16 @@
-$(document).ready(function() {
-	// overlay is messing up, figure out something else. turn off selecting or whatever if you can
+// SVG isn't loaded when events are fired, requires load event
+$(document).on('click', '.obj path', function() {
+	if (dir == 1) {
+		$('.obj').attr('class', 'obj');
 
-	$('.obj').click(function() {
-		$('.obj').attr('class', 'obj active');
-	});
+		$(this).parent().attr('class', 'obj active');
+	}
+
+	if (dir == -1) {
+		$('.obj').attr('class', 'obj');
+	}
+
+	updateNode();
 });
 
 $(document).on('mousedown mouseup', function(e) {
