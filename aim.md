@@ -1,9 +1,47 @@
-# AIM
-
-AIM is a GUI interface to editing SVG, Scalable Vector Graphic.
+AIM is a GUI interface to editing the SVG (Scalable Vector Graphic) format.
 Anything you can do with SVG, you can do with AIM.
 
-### SVG
+### Hotkeys
+#### SVG
+All of the SVG commands correspond to the respective hotkey. Hit the key to create the path of that type, and depending on the command and its arguments continue to hit that key at different cursor positions to change the attributes.
+
+The `M` and `Z` arguments are added automatically.
+
+<span style="display: flex">
+	<span>
+	| Key | Position | 
+	|-----|----------| 
+	| L   | 20,30    | 
+	| L   | 90,50    | 
+	| L   | 20,50    | 
+	</span>
+
+	<span>
+	<svg fill="#000">
+		<path d="
+		M 20,30
+		L 90,50
+		L 20,50
+		Z
+		">
+		</path>
+	</svg>
+	</span>
+
+	<span>
+	```
+	<svg fill="#000">
+		<path d="
+		M 20,30
+		L 90,50
+		L 20,50
+		Z
+		">
+		</path>
+	</svg>
+	```
+	</span>
+</span>
 
 | Letter | Command                         | 
 |--------|---------------------------------| 
@@ -18,36 +56,38 @@ Anything you can do with SVG, you can do with AIM.
 | A      | elliptical Arc                  | 
 | Z      | closepath                       | 
 
-### Hotkeys
+#### Modifier
 Down:
-Shift - Incrementor = 100
-Ctrl - Incrementor = 1
+| Key   | Effect               | 
+|-------|----------------------| 
+| Shift | Incrementor = 100    | 
+| Ctrl  | Incrementor = 1      | 
+|       |                      | 
+| Alt   | Direction = Negative | 
 
 Up:
-Incrementor = 10
+| Key   | Effect               |
+|-------|----------------------|
+|       | Incrementor = 10     |
+|       | Direction = Positive |
 
 #### Mode
-. - Point mode
-- - Line mode
-
-Esc - Escape to object mode
-
-#### Modifier
-Shift - Extreme incrementor (100)
-Ctrl - Minimal incrementor (1)
-
-(Keyup) - Return to normal incrementor
+| Key | Effect                 |
+|-----|------------------------|
+| .   | Point mode, next point |
+| m   | Move mode              |
+|     |                        |
+| Esc | Escape to object mode  |
 
 #### Navigation
-j - Move cursor
-,x - x axis
-,y - x axis
-,,<no> - Position
-
-#### Transform
-Primitives (boilerplate SVGs) are stored and loaded in cfg/prim
-
-Colors are stored in cfg/colors.json. Provide a name and a corresponding color
+Move cursor to co-ordinate:
+| Key | Axis | Co-ordinate | 
+|-----|------|-------------| 
+| j   |      |             | 
+|     | x    |             | 
+|     | y    |             | 
+|     |      | <no>        | 
 
 #### General
-Writing an SVG sticks it in a folder, and this can be opened and worked on at any time
+The `svg` folder contains SVG files, with subsequent folders being used for various purposes.
+`prim` contains primitives and `output` contains saved files, but the idea is that they're ultimately the same thing and should you want to create another folder for your own purposes it's all the same.
