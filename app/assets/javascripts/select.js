@@ -60,11 +60,20 @@ $(document).on('mousedown mouseup', function(e) {
 
 				$('#select rect').attr('width', size[0]);
 				$('#select rect').attr('height', size[1]);
+
+				// select point
+				var d = getData();
+
+				$.each(d, function(i, point) {
+					if (point['point'][1] > select[0][0] && point['point'][2] < select[1][0] && point['point'][2] > select[0][1] && point['point'][2] < select[1][1]) {
+						if ($.inArray(i, activePoint) == -1) {
+							activePoint.push(i);
+						}
+
+						updateNode();
+					}
+				});
 			});
 		}
 	}
-
-	$('#canv .obj').each(function() {
-		$(this).addClass('active');
-	});
 });

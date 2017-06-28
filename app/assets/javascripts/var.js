@@ -9,3 +9,5 @@ var inc = 10;
 var dir = 1;
 var keymode = '';
 var clipboard = [];
+
+var activePoint = [];
