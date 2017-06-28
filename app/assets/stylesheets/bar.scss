@@ -32,12 +32,32 @@
 				}
 			}
 		}
+		#color-palette {
+			div {
+				svg {
+					cursor: pointer;
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+		#history {
+			div {
+				background: #fff;
+				margin: 10px;
+				svg {
+					transform: scale(0.4);
+					overflow: visible;
+				}
+			}
+		}
 	}
 	#btn {
 		background: #222;
 		padding-right: 18px;
 		width: 100px;
 		margin: 0;
+		overflow-y: auto;
 		a.current {
 			text-decoration: underline;
 			&::after {
@@ -52,7 +72,7 @@
 	}
 	#res {
 		background: #333;
-		overflow-y: scroll;
+		overflow-y: auto;
 		// fix svg expanding to huge size
 		> div {
 			display: flex;
@@ -64,27 +84,5 @@
 				width: 50px;
 			}
 		}
-	}
-	#color-palette {
-		div {
-			svg {
-				cursor: pointer;
-				width: 16px;
-				height: 16px;
-			}
-		}
-	}
-	#history {
-		div {
-			background: #fff;
-			margin: 10px;
-			svg {
-				transform: scale(0.4);
-				overflow: visible;
-			}
-		}
-	}
-	#help {
-		margin-top: auto;
 	}
 }
