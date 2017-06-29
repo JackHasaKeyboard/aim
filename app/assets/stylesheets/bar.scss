@@ -10,11 +10,11 @@
 		width: 216px;
 		display: flex;
 		flex-direction: column;
+		padding: 0;
 		#expand {
 			display: flex-column;
 			overflow-y: scroll;
 			flex-grow: 1;
-			padding: 0;
 		}
 		h4 {
 			cursor: pointer;
@@ -72,16 +72,24 @@
 	}
 	#res {
 		background: #333;
+		display: flex;
+		flex-direction: column;
 		overflow-y: auto;
 		// fix svg expanding to huge size
-		> div {
+		div {
 			display: flex;
-			align-items: center;
-			justify-content: center;
-			svg {
-				background: #fff;
-				height: 50px;
-				width: 50px;
+			flex-direction: column;
+			padding: 0;
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				svg {
+					background: #fff;
+					height: 50px;
+					width: 50px;
+					padding: 6px;
+				}
 			}
 		}
 	}

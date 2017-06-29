@@ -1,5 +1,5 @@
 <div id="bar">
-		<div id="setting">
+	<div id="setting">
 		<div id="expand">
 			<div>
 				<h3 id="logo">AIM</h3>
@@ -161,13 +161,13 @@
 	</ul>
 	<div id="res">
 		<% Dir.glob("svg/*").each do |d| %>
-			<% Dir.glob("#{d}/*").each do |f| %>
-				<div>
-					<div>
+			<div>
+				<% Dir.glob("#{d}/*").each do |f| %>
+					<a>
 						<%= File.read(f).html_safe %>
-					</div>
-				</div>
-			<% end %>
+					</a>
+				<% end %>
+			</div>
 		<% end %>
 	</div>
 </div>
