@@ -17,10 +17,17 @@ $(document).ready(function() {
 		$('.active').attr('fill', color);
 	});
 
-	$('#cap #linejoin').change(function() {
+	// stroke
+	$('#cap #linecap select').change(function() {
+		var linecap = $(this).val();
+
+		$('.active path').attr('stroke-linecap', linecap);
+	});
+
+	$('#cap #linejoin select').change(function() {
 		var linejoin = $(this).val();
 
-		$('.active').attr('stroke-linejoin', linejoin);
+		$('.active path').attr('stroke-linejoin', linejoin);
 	});
 
 	$('#layer input').change(function() {

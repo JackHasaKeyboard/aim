@@ -33,17 +33,21 @@
 						</div>
 						<div id="cap">
 							<h5>Corner</h5>
-							<div class="input">
+							<div class="input" id="linejoin">
+								<label for="linejoin">Linejoin</label>
+								<select>
+									<option value="miter">Miter</option>
+									<option value="round">Round</option>
+									<option value="bevel">Bevel</option>
+								</select>
+							</div>
+							<div class="input" id="linecap">
 								<label for="linecap">Linecap</label>
-								<select id="linecap">
+								<select>
 									<option value="butt">Butt</option>
 									<option value="square">Square</option>
 									<option value="round">Round</option>
 								</select>
-							</div>
-							<div class="input">
-								<label for="linejoin">Linejoin</label>
-								<input type="text" id="linejoin">
 							</div>
 						</div>
 						<div id="transform">
