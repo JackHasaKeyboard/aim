@@ -1,40 +1,58 @@
 $(document).ready(function() {
+	// scale
 	$('#scale input').change(function() {
-		// idk why it's returning an object
-		var parent = $(this).parent();
+		parent = $(this).parent().attr('id');
 
-		alert(parent)
+		ratio = $(this).val();
+
+		switch(parent) {
+			case 'global':
+				$('.active').css('transform', 'scale(' + ratio + ')');
+
+				break;
+
+			case 'x':
+				$('.active').css('transform', 'scaleX(' + ratio + ')');
+
+				break;
+
+			case 'y':
+				$('.active').css('transform', 'scaleY(' + ratio + ')');
+
+				break;
+		}
 	});
 
-	$('#scale #global input').change(function() {
-		var ratio = $(this).val();
+	// skew
+	$('#skew input').after('<label>deg<label>');
 
-		$('.active').css('transform', 'scale(' + ratio + ')');
+	$('#skew input').change(function() {
+		parent = $(this).parent().attr('id');
+
+		ratio = $(this).val();
+
+		switch(parent) {
+			case 'global':
+				$('.active').css('transform', 'skew(' + ratio + 'deg, ' + ratio + 'deg)');
+
+				break;
+
+			case 'x':
+				$('.active').css('transform', 'skewX(' + ratio + 'deg)');
+
+				break;
+
+			case 'y':
+				$('.active').css('transform', 'skewY(' + ratio + 'deg)');
+
+				break;
+		}
 	});
 
-	$('#scale #x input').change(function() {
-		var ratio = $(this).val();
+	// rotate
+	$('#rotate input').after('<label>deg<label>');
 
-		$('.active').css('transform', 'scaleX(' + ratio + ')');
-	});
-
-	$('#scale #y input').change(function() {
-		var ratio = $(this).val();
-
-		$('.active').css('transform', 'scaleY(' + ratio + ')');
-	});
-
-	var ratio = [];
-
-	$('#transform #skew input').change(function() {
-		var eq = $(this).index();
-
-		ratio[eq] = $(this).val();
-
-		$('.active').css('transform', 'skew(' + ratio[0] + 'deg,' + ratio[1] + 'deg)');
-	});
-
-	$('#transform #rotate input').change(function() {
+	$('#rotate input').change(function() {
 		var deg = $(this).val();
 
 		$('.active').css('transform', 'rotate(' + deg + 'deg)');
