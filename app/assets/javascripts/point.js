@@ -1,3 +1,5 @@
+var state = 0;
+
 window.addPoint = function(type) {
 	if (!$('.active').length) {
 		$('#overlay').append('<svg id="new" shape-rendering="crispEdges"><path stroke="blue"></path></svg>');
@@ -25,7 +27,13 @@ window.addPoint = function(type) {
 				break;
 
 			case 'C':
-				closed == false ? (closed = true, d += type + ' ' + pos[0] + ',' + pos[1] + ' ') : (closed = false, d += pos[0] + ',' + pos[1] + ' ' + pos[0] + ',' + pos[1] + '\n');
+				if (state == 0) {
+					d += type + ' '
+				}
+
+				d += pos[0] + ',' + pos[1] + '\n';
+
+				state++ % 3
 
 				break;
 
@@ -41,7 +49,7 @@ window.addPoint = function(type) {
 
 		p++;
 
-		$('.active path').attr('d', d + 'Z\n');
+		$('.active path').attr('d', d);
 	}
 
 	prevPoint = pos.slice();
