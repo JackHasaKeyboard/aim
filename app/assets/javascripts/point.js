@@ -38,7 +38,7 @@ window.addPoint = function(type) {
 
 				d += pos[0] + ',' + pos[1] + '\n';
 
-				state++ % 3
+				state = (state + dir) % 3
 
 				break;
 
@@ -71,15 +71,12 @@ window.selectPoint = function(dir) {
 
 	var d = getData();
 
-	$('.node').attr('stroke', 'blue');
-	$('.node:eq(' + p + ')').attr('stroke', 'red');
-
 	p = (p + dir) % d.length
-	alert(p)
 
 	prevPoint = d[p];
 
 	updateNode();
+	updatePowerline();
 }
 
 window.setData = function(d) {

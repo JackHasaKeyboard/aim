@@ -243,21 +243,16 @@ $(document).keydown(function(e) {
 					break;
 
 				case 90: // z
+					mode = 'obj';
+
 					$('.active').attr('class', 'obj');
 
 					updateNode();
 
-					mode = 'obj';
-
 					break;
 
 				case 79: // o
-					if (dir == 1) {
-						obj < ($('.obj').length - 1) ? obj += dir : obj = 0
-					}
-					if (dir == -1) {
-						obj > 0 ? obj += dir : obj = ($('.obj').length - 1)
-					}
+					obj = (obj + dir) % $('.obj').length
 
 					$('.obj').attr('class', 'obj');
 					$('.obj:eq(' + obj + ')').attr('class', 'obj active');
