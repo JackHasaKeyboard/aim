@@ -4,4 +4,6 @@ $(document).ready(function() {
 
 		$(this).find('i').toggleClass('fa-angle-double-down fa-angle-double-up');
 	});
+
+	$('input.numeric').numeric();
 });
