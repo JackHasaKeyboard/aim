@@ -9,9 +9,8 @@ window.updateNode = function() {
 
 	updatePowerline();
 
-	$('.node:eq(' + p + ')').attr('stroke', 'red');
-
-	$('.node').attr('stroke', 'blue');
+	$('.node').attr('stroke', 'red');
+	$('.node:eq(' + p + ')').attr('stroke', 'blue');
 
 	$.each(activePoint, function(i, point) {
 		$('.node').eq(i).attr('stroke', 'red');
