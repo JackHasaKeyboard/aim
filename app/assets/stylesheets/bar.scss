@@ -34,10 +34,12 @@
 		}
 		#color-palette {
 			div {
-				svg {
-					cursor: pointer;
-					width: 16px;
-					height: 16px;
+				a {
+					padding: 0;
+					svg {
+						width: 16px;
+						height: 16px;
+					}
 				}
 			}
 		}

@@ -142,25 +142,29 @@
 				<%# </div> %>
 			<div class="setting" id="color-palette">
 				<h4>Colors<i class="fa fa-angle-double-down"></i></h4>
-				<% f = JSON.parse(File.read("cfg/color.json")).map %>
+				<% f = JSON.parse(File.read("public/cfg/color.json")).map %>
 
 				<% f.each do |name, palette| %>
 					<div>
 						<h5><%= name %></h5>
 						<div>
-							<% palette.each do |i, data| %>
+							<% palette.each do |name, data| %>
 								<% if data.class == String %>
-									<svg>
-										<rect width="16px" height="16px" fill="<%= data %>"></rect>
-									</svg>
+									<a title="<%= name %>">
+										<svg>
+											<rect width="16px" height="16px" fill="<%= data %>"></rect>
+										</svg>
+									</a>
 								<% end %>
 								<% if data.class == Hash %>
 									<div>
-										<h5><%= i %></h5>
-										<% data.each do |i, color| %>
-											<svg>
-												<rect width="16px" height="16px" fill="<%= color %>"></rect>
-											</svg>
+										<h5><%= name %></h5>
+										<% data.each do |name, val| %>
+											<a title="<%= name %>">
+												<svg>
+													<rect width="16px" height="16px" fill="<%= val %>"></rect>
+												</svg>
+											</a>
 										<% end %>
 									</div>
 								<% end %>
