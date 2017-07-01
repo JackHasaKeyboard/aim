@@ -50,11 +50,26 @@ $(document).ready(function() {
 	});
 
 	// rotate
-	$('#rotate input').after('<label>deg<label>');
-
 	$('#rotate input').change(function() {
-		var deg = $(this).val();
+		parent = $(this).parent().attr('id');
 
-		$('.active').css('transform', 'rotate(' + deg + 'deg)');
+		ratio = $(this).val();
+
+		switch(parent) {
+			case 'global':
+				$('.active').css('transform', 'rotate(' + ratio + 'deg)');
+
+				break;
+
+			case 'x':
+				$('.active').css('transform', 'rotateX(' + ratio + 'deg)');
+
+				break;
+
+			case 'y':
+				$('.active').css('transform', 'rotateY(' + ratio + 'deg)');
+
+				break;
+		}
 	});
 });
