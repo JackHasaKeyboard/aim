@@ -47,7 +47,7 @@ $(document).on('keydown keyup', function(e) {
 	}
 });
 
-obj = 0;
+obj = $('.obj').length;
 closed = false;
 
 deg = 0;
@@ -272,42 +272,32 @@ $(document).keydown(function(e) {
 
 			switch(e.which) {
 				case 40: // down arrow
-					d[p][1] += inc;
-
-					updateNode();
+					d[p]['point'][2] += inc;
 
 					break;
 
 				case 38: // up arrow
-					d[p][1] -= inc;
-
-					updateNode();
+					d[p]['point'][2] -= inc;
 
 					break;
 
 				case 37: // left arrow
-					d[p][0] -= inc;
-
-					updateNode();
+					d[p]['point'][1] -= inc;
 
 					break;
 
 				case 39: // right arrow
-					d[p][0] += inc;
-
-					updateNode();
+					d[p]['point'][1] += inc;
 
 					break;
 
 				case 68: // d
-					var d = getData();
-
 					d.splice(p + 1, 1);
-
-					$('.active path').attr('d', d + 'Z\n');
 
 					break;
 			}
+
+			updateNode();
 
 			setData(d);
 		}
