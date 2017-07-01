@@ -14,24 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-function getData() {
-	var data = [],
-	s = $('.active path').attr('d'),
-	seg = /([^\d]) (\d+),(\d+)/g,
-	item;
-
-	while (item = seg.exec(s)) {
-		data.push(
-			{
-				'point': [
-					item[1],
-					parseInt(item[2]),
-					parseInt(item[3])
-				]
-			}
-		);
-	}
-
-	return data;
-}
