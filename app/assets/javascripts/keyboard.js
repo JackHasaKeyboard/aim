@@ -292,9 +292,9 @@ $(document).keydown(function(e) {
 					break;
 			}
 
-			updateNode();
-
 			setData(d);
+
+			updateNode();
 		}
 	}
 });
