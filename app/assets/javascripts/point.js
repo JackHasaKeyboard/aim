@@ -2,11 +2,16 @@ var state = 0;
 
 window.addPoint = function(type) {
 	if (!$('.active').length) {
-		$('#overlay').append('<svg id="new" shape-rendering="crispEdges"><path stroke="blue"></path></svg>');
-
 		d = '\nM ' + pos[0] + ',' + pos[1] + '\n';
 
 		$('#canv').append('<svg id="obj--' + obj + '" class="obj active" fill="#000"><path d="' + d + '"></path></svg>');
+
+		$('#overlay').append('<svg id="new" shape-rendering="crispEdges"><path stroke="blue"></path></svg>');
+
+		$('#overlay').append($('.active').clone(true, true).attr({
+			'fill': 'none',
+			'stroke': 'blue'
+		}));
 
 		obj++;
 	} else {
@@ -54,7 +59,6 @@ window.addPoint = function(type) {
 
 	prevPoint = pos.slice();
 
-	updateHighlight();
 	updateData();
 	updatePowerline();
 	updateNode();
@@ -67,16 +71,11 @@ window.selectPoint = function(dir) {
 
 	var d = getData();
 
-	$('.node').attr('stroke', 'red');
-	$('.node:eq(' + p + ')').attr('stroke', 'blue');
+	$('.node').attr('stroke', 'blue');
+	$('.node:eq(' + p + ')').attr('stroke', 'red');
 
-	if (dir == 1) {
-		p < d.length ? p += dir : p = 0
-	}
-
-	if (dir == -1) {
-		p > 0 ? p += dir : p = d.length
-	}
+	p = (p + dir) % d.length
+	alert(p)
 
 	prevPoint = d[p];
 
